@@ -3,8 +3,10 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function blogs() {
-  let [data, setData] = useState([])
-  let navigate=useNavigate()
+  let [data, setData] = useState([]);
+  let [loader, setLoader] = useState(true);
+
+  let navigate = useNavigate();
   useEffect(function () {
     axios
       .get(`https://jsonplaceholder.typicode.com/posts`)
@@ -15,22 +17,32 @@ function blogs() {
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        setLoader(false);
       });
-  }, [])
+  }, []);
+  if (loader) {
+    return (
+      <div className="loader">
+        <img src="/src/img/loader.svg" alt="loading img" />
+      </div>
+    );
+  }
   function click(e) {
     console.log(e.currentTarget.id);
     navigate(`/Details/${e.currentTarget.id}`);
   }
   return (
-    <div className="container">
+    <div className="container card-container">
       <div className="cards">
         {data.length > 0 &&
           data.map((value, index) => {
             return (
               <div className="card" id={value.id} onClick={click} key={index}>
-                <h2>title: {value.title}</h2>
-                <h3>id: {value.id}</h3>
-                <h3>body: {value.body}</h3>
+                <h2 className="title">title: {value.title}</h2>
+                <h3 className="id">id: {value.id}</h3>
+                <h3 className="body">body: {value.body}</h3>
               </div>
             );
           })}
@@ -40,5 +52,3 @@ function blogs() {
 }
 
 export default blogs;
-
-

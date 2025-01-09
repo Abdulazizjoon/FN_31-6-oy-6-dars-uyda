@@ -1,16 +1,17 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import 
 function details() {
   let [data, setData] = useState([]);
   let [loader, setLoader] = useState(true);
-    let params = useParams();
+    let params = useParams().id
     
-  let api= "https://jsonplaceholder.typicode.com/posts"
+  let api = "https://jsonplaceholder.typicode.com/posts/"
+  console.log(params);
+  
   useEffect(function () {
     axios
-      .get(`${api}${params}`) 
+      .get(api+params) 
       .then((response) => {
         if (response.status == 200) {
           return setData(response.data);
@@ -33,11 +34,12 @@ function details() {
   }
 
   return (
-    <div className="container">
+    <div className="container cardd-container">
       {data && (
         <div className="cardd">
-          <h2>{data.title}</h2>
-          <p>{data.body}</p>
+          <h2 className="title">title: {data.title}</h2>
+          <div className="id">id: { data.id}</div>
+          <p className="body">body: {data.body}</p>
         </div>
       )}
     </div>
