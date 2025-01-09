@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function blogs() {
+function Blogs() {
   let [data, setData] = useState([]);
   let [loader, setLoader] = useState(true);
 
@@ -51,4 +51,4 @@ function blogs() {
   );
 }
 
-export default blogs;
+export default Blogs;

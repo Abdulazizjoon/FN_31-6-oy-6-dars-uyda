@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-function details() {
+function Details() {
   let [data, setData] = useState([]);
   let [loader, setLoader] = useState(true);
     let params = useParams().id
@@ -46,4 +46,4 @@ function details() {
   );
 }
 
-export default details;
+export default Details;
