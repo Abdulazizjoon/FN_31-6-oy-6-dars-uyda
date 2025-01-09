@@ -2,7 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import Home from "./components/home";
-import Blogs from "./components/blogs";
+import Blogs from "./components/Blogs";
 import Details from "./components/details";
 import Errorpage from "./components/errorpage";
 import Main from "./layouts/main";
