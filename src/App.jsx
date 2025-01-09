@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home.jsx";
 import Blogs from "./components/Blogs.jsx";
 import Errorpage from "./components/Errorpage.jsx";
-import Main from "./layouts/Main.jsx";
+import Main from "./layouts/main.jsx";
 import Details from "./components/Details.jsx";
 
 
