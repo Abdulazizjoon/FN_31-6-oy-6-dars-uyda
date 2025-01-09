@@ -1,13 +1,11 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg"; 
-import Home from "./components/Home.jsx";
-import Blogs from "./components/Blogs.jsx"; 
-import Errorpage from "./components/Errorpage.jsx";
-import Main from "./layouts/Main.jsx";
-import Details from "./components/Details.jsx";
-
 import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Blogs from "./components/Blogs";
+import Errorpage from "./components/Errorpage";
+import Main from "./layouts/Main";
+import Details from "./components/Details";
+
 import "./App.css";
 
 function App() {
