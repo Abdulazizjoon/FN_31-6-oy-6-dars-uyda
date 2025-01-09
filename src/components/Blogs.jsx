@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import img from "/src/img/loader.svg";
 
 function Blogs() {
   let [data, setData] = useState([]);
   let [loader, setLoader] = useState(true);
-
   let navigate = useNavigate();
   useEffect(function () {
     axios
@@ -25,7 +25,7 @@ function Blogs() {
   if (loader) {
     return (
       <div className="loader">
-        <img src="/src/img/loader.svg" alt="loading img" />
+        <img src={img} alt="loading img" />
       </div>
     );
   }
